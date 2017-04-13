@@ -53,17 +53,18 @@ export default class App extends React.Component {
     this.nextMovie();
   }
 
-  handleMovieCardClick() {
-    this.setState(state => ({
-      displayDetails: !state.displayDetails
-    }), async () => {
-      if (this.state.displayDetails && this.state.movie) {
+  async handleMovieCardClick() {
+    if (!this.state.displayDetails) {
+      this.setState({ displayDetails: true });
+      if (this.state.movie) {
         const details = await getMovieDetails(this.state.movie.id);
         this.setState({
           movie: details
         });
       }
-    });
+    } else {
+      this.setState({ displayDetails: false });
+    }
   }
 
   render() {

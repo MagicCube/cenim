@@ -17,7 +17,7 @@ export default class MovieCard extends React.Component {
         return (<div className="loading">正在加载...</div>);
       } else {
         return (
-          <div className="details">
+          <div className="details" style={{width: window.innerWidth}}>
             <div className="row"><span className="caption">导演:</span> <span>{movie.directors.join(', ')}</span></div>
             <div className="row"><span className="caption">主演:</span> <span>{movie.casts.join(', ')}</span></div>
             <div className="row"><span className="caption">国家:</span> <span>{movie.countries.join(', ')}</span></div>
