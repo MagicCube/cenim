@@ -44,6 +44,7 @@ export default class MovieCard extends React.Component {
         <div className="cover" style={{ backgroundImage: `url(${data.img})` }} />
         <div className="bottom-bar">
           <div className="title">{data.title}</div>
+          {data.recommendedBy ? <div className="recommendation">根据《{data.recommendedBy}》推荐</div> : null}
         </div>
         {details}
       </div>

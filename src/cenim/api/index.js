@@ -48,6 +48,7 @@ export function likeMovie(movie) {
     const filterIds = [];
     _movieList.forEach((m) => {
       if (m.clusterIndex === movie.clusterIndex) {
+        m.recommendedBy = movie.title;
         _recommendationList.push(m);
         filterIds.push(m.id);
       }
@@ -63,6 +64,7 @@ export function dislikeMovie(movie) {
   setTimeout(() => {
     if (_recommendationList.length > 0) {
       _recommendationList.forEach((m) => {
+        m.recommendedBy = null;
         _movieList.push(m);
       });
       shuffleMovieList();

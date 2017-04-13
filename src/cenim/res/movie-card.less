@@ -40,13 +40,19 @@
 
   .bottom-bar {
     width: 100%;
-    height: 45px;
-    line-height: 45px;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 12px;
 
     .title {
       width: 250 - 12 - 12;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .recommendation {
+      margin-top: 2px;
+      width: 250 - 12 - 12;
+      font-size: smaller;
+      color: #aaa;
       white-space: nowrap;
       overflow: hidden;
     }
@@ -87,6 +93,10 @@
     .title {
       font-size: larger;
       font-weight: bold;
+      width: auto;
+    }
+
+    .recommendation {
       width: auto;
     }
 
