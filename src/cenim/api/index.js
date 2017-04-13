@@ -2,16 +2,27 @@ import { get, post } from '../http/client';
 
 
 let _movies = [];
-let _movieStack = [];
+let _movieList = [];
+let _recommendationList = [];
 const _ratings = [];
 let _postTimer = null;
 
 
 export async function loadMovies() {
-  _movies = await get('/data/index.json');
-  _movies = _movies.sort(() => Math.random() - 0.5);
-  _movieStack = _movies.slice(0);
+  _movies = await get('/api/movie/index');
+  resetMovieList();
 }
+
+function resetMovieList() {
+  _movieList = _movies.slice(0);
+  shuffleMovieList();
+  _recommendationList.splice(0, _recommendationList.length);
+}
+
+function shuffleMovieList() {
+  _movieList.sort(() => Math.random() - 0.5);
+}
+
 
 export async function getMovieDetails(id) {
   const details = await get(`/api/movie/${id}`);
@@ -19,20 +30,45 @@ export async function getMovieDetails(id) {
 }
 
 export function getNextMovie() {
-  const movie = _movieStack.pop();
+  let movie = _recommendationList.pop();
   if (!movie) {
-    _movieStack = _movies.slice(0);
+    movie = _movieList.pop();
+  }
+  if (!movie) {
+    resetMovieList();
     return getNextMovie();
   }
+  console.log(`total: ${_movieList.length + _recommendationList.length}, movieList: ${_movieList.length}, recommendationList: ${_recommendationList.length}`);
   return movie;
 }
 
 export function likeMovie(movie) {
   rate(movie, 1);
+  if (_recommendationList.length === 0 || _recommendationList[0].clusterIndex !== movie.clusterIndex) {
+    const filterIds = [];
+    _movieList.forEach((m) => {
+      if (m.clusterIndex === movie.clusterIndex) {
+        _recommendationList.push(m);
+        filterIds.push(m.id);
+      }
+    });
+    if (filterIds.length > 0) {
+      _movieList = _movieList.filter(m => filterIds.indexOf(m.id) === -1);
+    }
+  }
 }
 
 export function dislikeMovie(movie) {
   rate(movie, -1);
+  setTimeout(() => {
+    if (_recommendationList.length > 0) {
+      _recommendationList.forEach((m) => {
+        _movieList.push(m);
+      });
+      shuffleMovieList();
+      _recommendationList.splice(0, _recommendationList.length);
+    }
+  });
 }
 
 export function skipMovie(movie) {
