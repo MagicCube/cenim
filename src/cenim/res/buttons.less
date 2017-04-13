@@ -1,0 +1,34 @@
+.buttons {
+  margin-left: auto;
+  margin-right: auto;
+  button {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    background: white;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    &:active {
+      transform: scale(1.5);
+    }
+
+    &.unwatched {
+      background: #7faece;
+      margin-left: 0;
+    }
+
+    &.dislike {
+      background: #44c6b8;
+    }
+
+    &.like {
+      background: #fb6565;
+      margin-right: 0;
+    }
+  }
+}
