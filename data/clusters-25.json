@@ -50,11 +50,6 @@
         "title": "美丽心灵"
       },
       {
-        "id": "1292343",
-        "img": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p1783650111.jpg",
-        "title": "蝴蝶效应"
-      },
-      {
         "id": "11525673",
         "img": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p2178872593.jpg",
         "title": "布达佩斯大饭店"
@@ -83,11 +78,6 @@
         "id": "1300117",
         "img": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p2195672555.jpg",
         "title": "千钧一发"
-      },
-      {
-        "id": "3073124",
-        "img": "http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p449399746.jpg",
-        "title": "月球"
       },
       {
         "id": "1293929",
@@ -195,11 +185,6 @@
         "id": "1299398",
         "img": "http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p1280323646.jpg",
         "title": "大话西游之月光宝盒"
-      },
-      {
-        "id": "2129039",
-        "img": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p465583562.jpg",
-        "title": "飞屋环游记"
       },
       {
         "id": "1292215",
@@ -600,6 +585,11 @@
         "id": "25814707",
         "img": "http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2215147728.jpg",
         "title": "小森林 冬春篇"
+      },
+      {
+        "id": "6146955",
+        "img": "http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p1528763106.jpg",
+        "title": "寿司之神"
       }
     ]
   },
@@ -621,11 +611,6 @@
         "id": "3442220",
         "img": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p455222172.jpg",
         "title": "海豚湾"
-      },
-      {
-        "id": "1301753",
-        "img": "http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2277799019.jpg",
-        "title": "狮子王"
       },
       {
         "id": "5322596",
@@ -666,11 +651,6 @@
         "id": "3217169",
         "img": "http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p1145536386.jpg",
         "title": "勇士"
-      },
-      {
-        "id": "6146955",
-        "img": "http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p1528763106.jpg",
-        "title": "寿司之神"
       }
     ]
   },
@@ -825,6 +805,31 @@
       "悬疑"
     ],
     "movies": [
+      {
+        "id": "3075287",
+        "img": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p988260245.jpg",
+        "title": "源代码"
+      },
+      {
+        "id": "3073124",
+        "img": "http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p449399746.jpg",
+        "title": "月球"
+      },
+      {
+        "id": "1292343",
+        "img": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p1783650111.jpg",
+        "title": "蝴蝶效应"
+      },
+      {
+        "id": "1302827",
+        "img": "http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p792257137.jpg",
+        "title": "人工智能"
+      },
+      {
+        "id": "1294638",
+        "img": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p984732992.jpg",
+        "title": "E.T. 外星人"
+      },
       {
         "id": "3541415",
         "img": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p513344864.jpg",
@@ -987,6 +992,16 @@
       "温情"
     ],
     "movies": [
+      {
+        "id": "2129039",
+        "img": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p465583562.jpg",
+        "title": "飞屋环游记"
+      },
+      {
+        "id": "1301753",
+        "img": "http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2277799019.jpg",
+        "title": "狮子王"
+      },
       {
         "id": "2131459",
         "img": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p449665982.jpg",
@@ -1189,16 +1204,6 @@
         "id": "1291822",
         "img": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p2159368352.jpg",
         "title": "卢旺达饭店"
-      },
-      {
-        "id": "1302827",
-        "img": "http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p792257137.jpg",
-        "title": "人工智能"
-      },
-      {
-        "id": "1294638",
-        "img": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p984732992.jpg",
-        "title": "E.T. 外星人"
       },
       {
         "id": "10463953",
@@ -1516,11 +1521,6 @@
         "id": "24750126",
         "img": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p2192834364.jpg",
         "title": "荒蛮故事"
-      },
-      {
-        "id": "3075287",
-        "img": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p988260245.jpg",
-        "title": "源代码"
       }
     ]
   }
