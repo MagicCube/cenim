@@ -71,7 +71,7 @@ export default class App extends React.Component {
         <footer>
           <div className="buttons">
             <button className="skip" onClick={() => this.handleSkipMovie()}>没看过</button>
-            <button className="dislike" onClick={() => this.handleDislikeMovie()}>不喜欢</button>
+            <button className="dislike" onClick={() => this.handleDislikeMovie()}>一般般</button>
             <button className="like" onClick={() => this.handleLikeMovie()}>喜欢</button>
           </div>
         </footer>
