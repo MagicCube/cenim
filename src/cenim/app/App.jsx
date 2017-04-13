@@ -82,6 +82,7 @@ export default class App extends React.Component {
     return (
       <div className="cnm-app">
         <main className={this.state.displayDetails ? 'detailed' : null} >
+          <div className="hint">点击封面查看详情</div>
           <ReactCSSTransitionGroup
             transitionName="transition"
             transitionEnterTimeout={300}

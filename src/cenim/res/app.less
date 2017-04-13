@@ -20,6 +20,20 @@ html, body, #cnm-root {
 
     &.detailed {
       align-items: start;
+
+      .hint {
+        display: none;
+      }
+    }
+
+    > .hint {
+      position: absolute;
+      top: 6px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: smaller;
+      color: #aaa;
     }
 
     > span {
