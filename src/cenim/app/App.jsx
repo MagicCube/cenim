@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import { dislikeMovie, getNextMovie, likeMovie, loadMovies, skipMovie } from '../api';
+import { dislikeMovie, getMovieDetails, getNextMovie, likeMovie, loadMovies, skipMovie } from '../api';
 import MovieCard from '../components/MovieCard';
 
 import '../index.html';
@@ -13,7 +13,8 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: null
+      movie: null,
+      displayDetails: false
     };
   }
 
@@ -28,7 +29,10 @@ export default class App extends React.Component {
 
   nextMovie() {
     const movie = getNextMovie();
-    this.setState({ movie });
+    this.setState({
+      movie,
+      displayDetails: false
+    });
   }
 
   handleLikeMovie() {
@@ -49,17 +53,37 @@ export default class App extends React.Component {
     this.nextMovie();
   }
 
+  async handleMovieCardClick() {
+    if (!this.state.displayDetails) {
+      this.setState({ displayDetails: true });
+      if (this.state.movie) {
+        const details = await getMovieDetails(this.state.movie.id);
+        this.setState({
+          movie: details
+        });
+      }
+    } else {
+      this.setState({ displayDetails: false });
+    }
+  }
+
   render() {
     const movies = [];
     if (this.state.movie) {
       movies.push(this.state.movie);
     }
     const movieCards = movies.map(movie => (
-      <MovieCard key={movie.id} data={movie} />
+      <MovieCard
+        key={movie.id}
+        data={movie}
+        displayDetails={this.state.displayDetails}
+        onClick={() => this.handleMovieCardClick()}
+      />
     ));
     return (
       <div className="cnm-app">
-        <main>
+        <main className={this.state.displayDetails ? 'detailed' : null} >
+          <div className="hint">点击封面查看详情</div>
           <ReactCSSTransitionGroup
             transitionName="transition"
             transitionEnterTimeout={300}
@@ -69,10 +93,12 @@ export default class App extends React.Component {
           </ReactCSSTransitionGroup>
         </main>
         <footer>
-          <div className="buttons">
-            <button className="skip" onClick={() => this.handleSkipMovie()}>没看过</button>
-            <button className="dislike" onClick={() => this.handleDislikeMovie()}>一般般</button>
-            <button className="like" onClick={() => this.handleLikeMovie()}>喜欢</button>
+          <div className="button-bar">
+            <div className="buttons">
+              <button className="skip" onClick={() => this.handleSkipMovie()}>没看过</button>
+              <button className="dislike" onClick={() => this.handleDislikeMovie()}>一般般</button>
+              <button className="like" onClick={() => this.handleLikeMovie()}>喜欢</button>
+            </div>
           </div>
         </footer>
       </div>
