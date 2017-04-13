@@ -13,6 +13,11 @@ export async function loadMovies() {
   _movieStack = _movies.slice(0);
 }
 
+export async function getMovieDetails(id) {
+  const details = await get(`/api/movie/${id}`);
+  return details;
+}
+
 export function getNextMovie() {
   const movie = _movieStack.pop();
   if (!movie) {

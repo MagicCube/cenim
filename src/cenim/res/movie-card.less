@@ -1,3 +1,5 @@
+@import 'variables.less';
+
 .cnm-movie-card {
   width: 300px;
   margin-left: auto;
@@ -6,6 +8,7 @@
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  transition: width ease-out 0.4s;
 
   &.transition-enter {
     opacity: 0;
@@ -45,6 +48,53 @@
       width: 250 - 12 - 12;
       white-space: nowrap;
       overflow: hidden;
+    }
+  }
+
+  .loading {
+    padding: 12px;
+    color: gray;
+  }
+
+  .details {
+    display: none;
+    padding: 12px;
+
+    .row {
+      margin-top: 3px;
+      margin-bottom: 3px;
+
+      .caption {
+        color: gray;
+      }
+    }
+
+    article {
+      margin-top: 10px;
+    }
+  }
+}
+
+
+.detailed {
+  .cnm-movie-card {
+    width: 100%;
+    height: auto;
+    min-height: 1024px;
+    box-shadow: none;
+
+    .cover {
+      border-radius: 0;
+    }
+
+    .title {
+      font-size: larger;
+      font-weight: bold;
+      width: auto;
+    }
+
+    .details {
+      display: block;
     }
   }
 }
