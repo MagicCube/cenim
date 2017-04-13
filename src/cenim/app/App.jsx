@@ -69,10 +69,12 @@ export default class App extends React.Component {
           </ReactCSSTransitionGroup>
         </main>
         <footer>
-          <div className="buttons">
-            <button className="skip" onClick={() => this.handleSkipMovie()}>没看过</button>
-            <button className="dislike" onClick={() => this.handleDislikeMovie()}>一般般</button>
-            <button className="like" onClick={() => this.handleLikeMovie()}>喜欢</button>
+          <div className="button-bar">
+            <div className="buttons">
+              <button className="skip" onClick={() => this.handleSkipMovie()}>没看过</button>
+              <button className="dislike" onClick={() => this.handleDislikeMovie()}>一般般</button>
+              <button className="like" onClick={() => this.handleLikeMovie()}>喜欢</button>
+            </div>
           </div>
         </footer>
       </div>

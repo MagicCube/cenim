@@ -1,34 +1,46 @@
-.buttons {
-  margin-left: auto;
-  margin-right: auto;
-  button {
-    width: 80px;
-    height: 80px;
-    border: 1px solid #eee;
-    border-radius: 50%;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    background: white;
-    color: white;
-    font-weight: bold;
-    margin-left: 10px;
-    margin-right: 10px;
+@import 'variables.less';
 
-    &:active {
-      transform: scale(1.5);
-    }
+.button-bar {
+  position: fixed;
+  z-index: 9999;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: @cnm-footer-height;
+  background: @body-bg;
 
-    &.skip {
-      background: #7faece;
-      margin-left: 0;
-    }
+  .buttons {
+    text-align: center;
 
-    &.dislike {
-      background: #44c6b8;
-    }
+    button {
+      width: 80px;
+      height: 80px;
+      border: 1px solid #eee;
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      background: white;
+      color: white;
+      font-weight: bold;
+      margin-left: 10px;
+      margin-right: 10px;
 
-    &.like {
-      background: #fb6565;
-      margin-right: 0;
+      &:active {
+        transform: scale(1.5);
+      }
+
+      &.skip {
+        background: #7faece;
+        margin-left: 0;
+      }
+
+      &.dislike {
+        background: #44c6b8;
+      }
+
+      &.like {
+        background: #fb6565;
+        margin-right: 0;
+      }
     }
   }
 }
