@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import { loadMovies, getNextMovie } from '../api';
+import { dislikeMovie, getNextMovie, likeMovie, loadMovies, skipMovie } from '../api';
 import MovieCard from '../components/MovieCard';
 
 import '../index.html';
@@ -31,11 +31,21 @@ export default class App extends React.Component {
     this.setState({ movie });
   }
 
-  likeMovie() {
+  handleLikeMovie() {
+    if (!this.state.movie) return;
+    likeMovie(this.state.movie);
     this.nextMovie();
   }
 
-  dislikeMovie() {
+  handleDislikeMovie() {
+    if (!this.state.movie) return;
+    dislikeMovie(this.state.movie);
+    this.nextMovie();
+  }
+
+  handleSkipMovie() {
+    if (!this.state.movie) return;
+    skipMovie(this.state.movie);
     this.nextMovie();
   }
 
@@ -60,9 +70,9 @@ export default class App extends React.Component {
         </main>
         <footer>
           <div className="buttons">
-            <button className="unwatched" onClick={() => this.nextMovie()}>没看过</button>
-            <button className="dislike" onClick={() => this.dislikeMovie()}>不喜欢</button>
-            <button className="like" onClick={() => this.likeMovie()}>喜欢</button>
+            <button className="skip" onClick={() => this.handleSkipMovie()}>没看过</button>
+            <button className="dislike" onClick={() => this.handleDislikeMovie()}>不喜欢</button>
+            <button className="like" onClick={() => this.handleLikeMovie()}>喜欢</button>
           </div>
         </footer>
       </div>

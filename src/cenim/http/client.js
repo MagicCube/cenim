@@ -13,7 +13,7 @@ export function get(url) {
   });
 }
 
-export function post(url) {
+export function post(url, params = null) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', url);
@@ -28,6 +28,11 @@ export function post(url) {
         reject(`Request failed.  Returned status of ${xhr.status}`);
       }
     };
-    xhr.send(null);
+    if (params) {
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify(params));
+    } else {
+      xhr.send(null);
+    }
   });
 }
