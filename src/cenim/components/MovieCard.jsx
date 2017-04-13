@@ -21,7 +21,9 @@ export default class MovieCard extends React.Component {
             <div className="row"><span className="caption">导演:</span> <span>{movie.directors.join(', ')}</span></div>
             <div className="row"><span className="caption">主演:</span> <span>{movie.casts.join(', ')}</span></div>
             <div className="row"><span className="caption">国家:</span> <span>{movie.countries.join(', ')}</span></div>
-            <article>{movie.summary}</article>
+            <div className="row summary">
+              <article>{movie.summary}</article>
+            </div>
           </div>
         );
       }
