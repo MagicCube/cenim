@@ -526,11 +526,6 @@
         "title": "叫我第一名"
       },
       {
-        "id": "1302467",
-        "img": "http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p443461818.jpg",
-        "title": "黑客帝国3：矩阵革命"
-      },
-      {
         "id": "1401118",
         "img": "http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2101693489.jpg",
         "title": "黄金三镖客"
@@ -854,6 +849,11 @@
         "id": "1291843",
         "img": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p1910908765.jpg",
         "title": "黑客帝国"
+      },
+      {
+        "id": "1302467",
+        "img": "http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p443461818.jpg",
+        "title": "黑客帝国3：矩阵革命"
       },
       {
         "id": "2334904",
